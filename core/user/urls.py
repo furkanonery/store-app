@@ -1,6 +1,6 @@
 from django.urls import path
-from user.views import UserLoginAPIView
+from user.views import CustomAuthToken
 
 urlpatterns = [
-    path('login/', UserLoginAPIView.as_view(), name='login'),
+    path('login/', CustomAuthToken.as_view())
 ]
