@@ -15,6 +15,7 @@ from configs.database_config import DATABASE_CONFIG
 from configs.secure_config import SECRET_KEY, JWT_SECRET_KEY
 from configs.cache_config import REDIS_URL
 from datetime import timedelta
+import datetime
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'user',
     'store',
+    'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [
@@ -144,6 +146,11 @@ JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': timedelta(seconds=3600),
     'JWT_ALLOW_REFRESH': True,
     'JWT_REFRESH_EXPIRATION_DELTA': timedelta(days=7),
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(days=15),
+    'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=15),
 }
 
 CACHES = {
