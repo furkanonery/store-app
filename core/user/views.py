@@ -1,6 +1,9 @@
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
+from rest_framework import status
 
 class CustomAuthToken(ObtainAuthToken):
 
@@ -14,3 +17,12 @@ class CustomAuthToken(ObtainAuthToken):
             'token': token.key,
             'user_id': user.pk
         })
+    
+class LogoutView(ObtainAuthToken):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, *args, **kwargs):
+        user = request.user
+        Token.objects.filter(user=user).delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
