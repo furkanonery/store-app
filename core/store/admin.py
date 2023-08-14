@@ -7,20 +7,18 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('name', 'price')
+    pass
 
 @admin.register(UserProfile)
 class UserProfileAdmin(admin.ModelAdmin):
-    search_fields = ('user__username', 'user__email')
-    fields = ('user', 'profile_picture', 'phone_number', 'address', 'birth_date', 'bio')
+    pass
 
 class CartItemInline(admin.TabularInline):
-    model = CartItem
+    pass
 
 @admin.register(Cart)
 class CartAdmin(admin.ModelAdmin):
-    list_display = ('user',)
-    inlines = [CartItemInline]
+    pass
 
 @admin.register(CartItem)
 class CartItemAdmin(admin.ModelAdmin):
@@ -28,7 +26,7 @@ class CartItemAdmin(admin.ModelAdmin):
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    list_filter = ('created_at',)
+    pass
 
 @admin.register(OrderItem)
 class OrderItemAdmin(admin.ModelAdmin):
