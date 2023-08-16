@@ -1,6 +1,6 @@
 from rest_framework.permissions import BasePermission
 
-class OwnYourCarts(BasePermission):
+class OwnYourCartsOrOrder(BasePermission):
 
     def has_object_permission(self, request, view, obj):
         
