@@ -10,10 +10,16 @@ class OrderViewSet(mixins.CreateModelMixin,
                    mixins.RetrieveModelMixin,
                    mixins.UpdateModelMixin,
                    mixins.DestroyModelMixin,
-                   viewsets.GenericViewSet):
+                   viewsets.GenericViewSet,
+                   mixins.ListModelMixin
+                   ):
     
     permission_classes = [IsAuthenticated, OwnYourCartsOrOrder]
     authentication_classes = [TokenAuthentication,]
-    
-    queryset = Order.objects.all()
+
+    def get_queryset(self):
+
+        queryset = Order.objects.filter(user = self.request.user)
+        return queryset
+
     serializer_class = OrderSerializer
