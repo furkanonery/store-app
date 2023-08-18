@@ -20,21 +20,21 @@ This endpoint retrieves a list of available products.
 
     {
         "id": 10,
-        "category": "nuts",
         "name": "siirt pistachio",
         "description": "An endemic nut grown in Siirt, Turkey.",
         "price": "499.99",
         "stock": 7500,
-        "image": "http://localhost:8000/media/products/2023/08/18/test.jpeg"
+        "image": "http://127.0.0.1:8000/media/products/2023/08/18/test.jpeg",
+        "category": 4
     },
     {
         "id": 11,
-        "category": "nuts",
         "name": "çorum chickpeas(leblebi)",
         "description": "Çorum's famous roasted chickpea is made from black peas.",
         "price": "44.99",
         "stock": 9200,
-        "image": "http://localhost:8000/media/products/2023/08/18/test_como3qo.jpeg"
+        "image": "http://127.0.0.1:8000/media/products/2023/08/18/test_como3qo.jpeg",
+        "category": 4
     },
     // Other products
 
@@ -48,23 +48,23 @@ This endpoint allows you to add a new product.
 Content-Type: application/json
 
     {
-        "category": "electronics",
         "name": "laptop",
         "description": "A high-performance laptop.",
         "price": "1299.99",
-        "stock": 20
+        "stock": 20,
+        "category": <category_id>
     }
 
  **Response Example:**
 
     {
-        "id": 12,
-        "category": "electronics",
+        "id": 41,
         "name": "laptop",
         "description": "A high-performance laptop.",
         "price": "1299.99",
         "stock": 20,
-        "image": null
+        "image": null,
+        "category": 5
     }
 
 ## Carts
@@ -102,7 +102,7 @@ Authorization: Token <your_token>
 Content-Type: application/json
 
     {
-        "user": "user1"
+        "user": <user_id>
     }
 
 **Response Example:**
