@@ -5,6 +5,36 @@ Backend structure developed using Django REST Framework for an e-commerce applic
 
 This documentation outlines the usage and endpoints of the E-Commerce API. The API supports basic e-commerce functionalities such as product management, cart operations, and order processing.
 
+## Authorization
+
+### Login [POST /login/]
+
+This endpoint generates a token that allows users to authenticate into the system.
+
+**Request:**
+
+### POST /login/
+Content-Type: application/json
+
+    {
+        "username" : <your_username>,
+        "password" : <your_password>
+    }
+
+**Response Example:**
+
+    {
+        "token": <Token>,
+        "user_id": <user_id>
+    }
+
+### POST /logout/
+Authorization: Token <your_token>
+
+**Response Example:**
+
+Status Code: 204 No Content
+
 ## Products
 
 ### List Products [GET /products/]
