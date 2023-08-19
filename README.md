@@ -7,7 +7,7 @@ This documentation outlines the usage and endpoints of the E-Commerce API. The A
 
 ## Authorization
 
-### Login [POST /login/]
+### Login
 
 This endpoint generates a token that allows users to authenticate into the system.
 
@@ -28,6 +28,10 @@ Content-Type: application/json
         "user_id": <user_id>
     }
 
+### Logout
+
+This endpoint deletes the token generated for the user.
+
 ### POST /logout/
 Authorization: Token <your_token>
 
@@ -37,7 +41,7 @@ Status Code: 204 No Content
 
 ## Products
 
-### List Products [GET /products/]
+### List Products
 
 This endpoint retrieves a list of available products.
 
@@ -68,7 +72,7 @@ This endpoint retrieves a list of available products.
     },
     // Other products
 
-### Add Product [POST /products/]
+### Add Product
 
 This endpoint allows you to add a new product.
 
@@ -98,7 +102,7 @@ Content-Type: application/json
     }
 
 ## Carts
-### List Cart [GET /carts/]
+### List Cart
 
 This endpoint retrieves the user's cart.
 
@@ -121,7 +125,7 @@ Authorization: Token <your_token>
         ]
     }
 
-### Create Cart [POST /carts/]
+### Create Cart
 
 This endpoint creates a new cart.
 
@@ -143,7 +147,7 @@ Content-Type: application/json
         "cart_items": []
     }
 
-### Update Cart [PUT /carts/{cart_id}/]
+### Update Cart
 
 This endpoint updates the cart.
 
@@ -176,7 +180,7 @@ Content-Type: application/json
         ]
     }
 
-### Delete Cart [DELETE /carts/{cart_id}/]
+### Delete Cart
 
 This endpoint deletes the cart.
 
@@ -190,7 +194,7 @@ Authorization: Token <your_token>
 Status Code: 204 No Content
 
 ## Orders
-### List Orders [GET /orders/]
+### List Orders
 
 This endpoint retrieves the user's orders.
 
