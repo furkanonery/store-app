@@ -255,12 +255,12 @@ Authorization: Token <your_token>
 
 **Response Example:**
 
-{
-    "id": 4,
-    "quantity": 8,
-    "cart": 10,
-    "product": 10
-}
+    {
+        "id": 4,
+        "quantity": 8,
+        "cart": 10,
+        "product": 10
+    }
 
 
 ## Orders
