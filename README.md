@@ -205,39 +205,6 @@ Content-Type: application/json
         "cart_items": []
     }
 
-### Update Cart
-
-This endpoint updates the cart.
-
-**Request:**
-
-### PUT /carts/6/
-Authorization: Token <your_token>
-Content-Type: application/json
-
-    {
-        "user": "user1",
-        "cart_items": [
-            {
-                "product": 1,
-                "quantity": 2
-            }
-        ]
-    }
-
-**Response Example:**
-
-    {
-        "id": 6,
-        "user": "user1",
-        "cart_items": [
-            {
-                "product": 1,
-                "quantity": 2
-            }
-        ]
-    }
-
 ### Delete Cart
 
 This endpoint deletes the cart.
@@ -250,6 +217,51 @@ Authorization: Token <your_token>
 **Response Example:**
 
 Status Code: 204 No Content
+
+## CartItems
+### List CartItems
+
+This endpoint lists the cart items belonging to a user.
+
+**Request:**
+
+### GET /cartitems/
+Authorization: Token <your_token>
+
+**Response Example:**
+
+    {
+        "id": 3,
+        "quantity": 5,
+        "cart": 10,
+        "product": 41
+    },
+    {
+        "id": 4,
+        "quantity": 8,
+        "cart": 10,
+        "product": 10
+    },
+    // Other cart items
+
+### Get CartItem
+
+This endpoint retrieves a single cart item.
+
+**Request:**
+
+### GET /cartitems/{cartitem_id}
+Authorization: Token <your_token>
+
+**Response Example:**
+
+{
+    "id": 4,
+    "quantity": 8,
+    "cart": 10,
+    "product": 10
+}
+
 
 ## Orders
 ### List Orders
