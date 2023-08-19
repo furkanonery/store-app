@@ -9,8 +9,8 @@ from rest_framework import status
 from rest_framework.response import Response
 
 class CartViewSet(mixins.CreateModelMixin,
+                  mixins.RetrieveModelMixin,
                    mixins.ListModelMixin,
-                   mixins.UpdateModelMixin,
                    mixins.DestroyModelMixin,
                    GenericViewSet):
 
