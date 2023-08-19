@@ -101,6 +101,64 @@ Content-Type: application/json
         "category": 5
     }
 
+## Detail Product
+
+This endpoint retrieves the information of a single product.
+
+**Request:**
+
+### GET /products/{product_id}
+
+
+**Response Example:**
+
+    {
+        "id": 41,
+        "name": "laptop",
+        "description": "A high-performance laptop.",
+        "price": "1299.99",
+        "stock": 20,
+        "image": null,
+        "category": 5
+    }
+
+### Update Product
+
+This endpoint is used to update product information.
+
+**Request:**
+
+### PATCH /products/{product_id}/
+Content-Type: application/json
+
+    {
+        "price": "1599.99"
+    }
+
+ **Response Example:**
+
+    {
+        "id": 41,
+        "name": "laptop",
+        "description": "A high-performance laptop.",
+        "price": "1599.99",
+        "stock": 20,
+        "image": null,
+        "category": 5
+    }
+
+### Delete Product
+
+This endpoint is used to delete a product.
+
+**Request:**
+
+### DELETE /products/{products_id}
+
+ **Response Example:**
+
+Status Code: 204 No Content
+
 ## Carts
 ### List Cart
 
@@ -186,7 +244,7 @@ This endpoint deletes the cart.
 
 **Request:**
 
-### DELETE /carts/6/
+### DELETE /carts/{cart_id}/
 Authorization: Token <your_token>
 
 **Response Example:**
