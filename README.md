@@ -234,19 +234,14 @@ This endpoint creates a new cart.
 **Request:**
 
 ### POST /carts/
-Authorization: Token <your_token> <br>
-Content-Type: application/json
-
-    {
-        "user": <user_id>
-    }
+Authorization: Token <your_token>
 
 **Response Example:**
 
     {
-        "id": 6,
-        "user": "user1",
-        "cart_items": []
+        "id": 31,
+        "cart_items": [],
+        "products": []
     }
 
 ### Delete Cart
