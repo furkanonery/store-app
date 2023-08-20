@@ -234,7 +234,7 @@ This endpoint creates a new cart.
 **Request:**
 
 ### POST /carts/
-Authorization: Token <your_token>
+Authorization: Token <your_token> <br>
 Content-Type: application/json
 
     {
@@ -303,6 +303,30 @@ Authorization: Token <your_token>
         "id": 4,
         "quantity": 8,
         "cart": 10,
+        "product": 10
+    }
+
+### Create CartItem
+
+This endpoint retrieves a single cart item.
+
+**Request:**
+
+### POST /cartitems/
+Authorization: Token <your_token> <br>
+Content-Type: application/json
+
+    {
+        "quantity": 3,
+        "product": 10
+    }
+
+**Response Example:**
+
+    {
+        "id": 46,
+        "cart": 30,
+        "quantity": 3,
         "product": 10
     }
 
