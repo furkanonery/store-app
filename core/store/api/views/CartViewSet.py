@@ -5,8 +5,6 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
 from store.api.permissions import OwnYourCartsOrOrder
 from rest_framework import mixins
-from rest_framework import status
-from rest_framework.response import Response
 
 class CartViewSet(mixins.CreateModelMixin,
                   mixins.RetrieveModelMixin,
