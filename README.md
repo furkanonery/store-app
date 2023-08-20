@@ -330,6 +330,41 @@ Content-Type: application/json
         "product": 10
     }
 
+### Update CartItem
+
+This endpoint updates cart items.
+
+**Request:**
+
+### PATCH /cartitems/{cartitems_id}
+Authorization: Token <your_token> <br>
+Content-Type: application/json
+
+    {
+        "quantity": 34
+    }
+
+**Response Example:**
+
+    {
+        "id": 38,
+        "cart": 30,
+        "quantity": 34,
+        "product": 11
+    }
+
+### Delete CartItem
+
+This endpoint is used to delete a Cart Item.
+
+**Request:**
+
+### DELETE /cartitems/{cartitems_id}
+
+ **Response Example:**
+
+Status Code: 204 No Content
+
 
 ## Orders
 ### List Orders
