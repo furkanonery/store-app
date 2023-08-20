@@ -18,3 +18,6 @@ class CartItemViewSet(ModelViewSet):
         queryset = CartItem.objects.filter(cart__user=self.request.user)
         return queryset
     serializer_class = CartItemSerializer
+
+    def perform_create(self, serializer):
+        serializer.save(cart = Cart.objects.filter(user = self.request.user).last())
