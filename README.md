@@ -171,17 +171,61 @@ Authorization: Token <your_token>
 
  **Response Example:**
 
-    {
-        "id": 5,
-        "user": "user1",
-        "cart_items": [
-            {
-                "product": 1,
-                "quantity": 3
-            },
-            // Other products
-        ]
-    }
+    [
+        {
+            "id": 10,
+            "cart_items": [
+                {
+                    "id": 3,
+                    "quantity": 5,
+                    "cart": 10,
+                    "product": 41
+                },
+                {
+                    "id": 4,
+                    "quantity": 8,
+                    "cart": 10,
+                    "product": 10
+                },
+                {
+                    "id": 10,
+                    "quantity": 56,
+                    "cart": 10,
+                    "product": 11
+                }
+            ],
+            "user": "user1",
+            "products": [
+                {
+                    "id": 41,
+                    "name": "laptop",
+                    "description": "A high-performance laptop.",
+                    "price": "1599.99",
+                    "stock": 20,
+                    "image": null,
+                    "category": 5
+                },
+                {
+                    "id": 10,
+                    "name": "siirt pistachio",
+                    "description": "An endemic nut grown in Siirt, Turkey.",
+                    "price": "499.99",
+                    "stock": 7500,
+                    "image": "http://localhost:8000/media/products/2023/08/18/test.jpeg",
+                    "category": 4
+                },
+                {
+                    "id": 11,
+                    "name": "çorum chickpeas(leblebi)",
+                    "description": "Çorum's famous roasted chickpea is made from black peas.",
+                    "price": "44.99",
+                    "stock": 9200,
+                    "image": "http://localhost:8000/media/products/2023/08/18/test_como3qo.jpeg",
+                    "category": 4
+                }
+            ]
+        }
+    ]
 
 ### Create Cart
 
