@@ -5,6 +5,28 @@ Backend structure developed using Django REST Framework for an e-commerce applic
 
 This documentation outlines the usage and endpoints of the E-Commerce API. The API supports basic e-commerce functionalities such as product management, cart operations, and order processing.
 
+- [x] Login
+- [x] Logout
+- [x] List Products
+- [x] Add Product
+- [x] Detail Product
+- [x] Update Product
+- [x] Delete Product
+- [x] Listing the cart with items
+- [x] Create Cart
+- [x] Delete Cart
+- [x] List CartItems
+- [x] Get CartItem
+- [x] Create CartItem
+- [x] Update CartItem
+- [x] Delete CartItem
+- [ ] Listing the order with items
+- [ ] Create Order
+- [ ] Delete Order
+- [ ] Create OrderItem
+- [ ] Update OrderItem
+- [ ] Delete OrderItem
+
 ## Authorization
 
 ### Login
