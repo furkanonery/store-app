@@ -8,6 +8,7 @@ This documentation outlines the usage and endpoints of the E-Commerce API. The A
 - [x] Login
 - [x] Logout
 - [x] List Products
+- [x] List Products with query params
 - [x] Add Product
 - [x] Get Product With ID
 - [x] Update Product
@@ -20,7 +21,7 @@ This documentation outlines the usage and endpoints of the E-Commerce API. The A
 - [x] Create CartItem
 - [x] Update CartItem
 - [x] Delete CartItem With ID
-- [x] Listing the order with order_items
+- [x] Listing the orders with order_items
 - [x] Create Order
 - [x] Get Order With ID
 - [x] Delete Order With ID
@@ -91,6 +92,39 @@ This endpoint retrieves a list of available products.
         "image": "http://127.0.0.1:8000/media/products/2023/08/18/test_como3qo.jpeg",
         "category": 4
     },
+    // Other products
+
+### List Products with query params
+
+This endpoint retrieves a list of available products with query params.
+
+**Request:**
+
+### GET /products?&category=electronics
+
+
+**Response Example:**
+
+    [
+        {
+            "id": 41,
+            "name": "laptop",
+            "description": "A high-performance laptop.",
+            "price": "1599.99",
+            "stock": 20,
+            "image": null,
+            "category": 5
+        },
+        {
+            "id": 43,
+            "name": "Mouse",
+            "description": "A high quality mouse.",
+            "price": "299.99",
+            "stock": 50,
+            "image": null,
+            "category": 5
+        }
+    ]
     // Other products
 
 ### Add Product
