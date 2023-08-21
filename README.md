@@ -9,23 +9,22 @@ This documentation outlines the usage and endpoints of the E-Commerce API. The A
 - [x] Logout
 - [x] List Products
 - [x] Add Product
-- [x] Detail Product
+- [x] Get Product With ID
 - [x] Update Product
-- [x] Delete Product
-- [x] Listing the cart with items
+- [x] Delete Product With ID
+- [x] Get the cart with cart_items
 - [x] Create Cart
-- [x] Delete Cart
+- [x] Delete Cart With ID
 - [x] List CartItems
-- [x] Get CartItem
+- [x] Get CartItem With ID
 - [x] Create CartItem
 - [x] Update CartItem
-- [x] Delete CartItem
-- [ ] Listing the order with items
-- [ ] Create Order
-- [ ] Delete Order
-- [ ] Create OrderItem
-- [ ] Update OrderItem
-- [ ] Delete OrderItem
+- [x] Delete CartItem With ID
+- [x] Listing the order with order_items
+- [x] Create Order
+- [x] Get Order With ID
+- [x] Delete Order With ID
+
 
 ## Authorization
 
@@ -169,7 +168,7 @@ Content-Type: application/json
         "category": 5
     }
 
-### Delete Product
+### Delete Product With ID
 
 This endpoint is used to delete a product.
 
@@ -266,7 +265,7 @@ Authorization: Token <your_token>
         "products": []
     }
 
-### Delete Cart
+### Delete Cart With ID
 
 This endpoint deletes the cart.
 
@@ -370,7 +369,7 @@ Content-Type: application/json
         "product": 11
     }
 
-### Delete CartItem
+### Delete CartItem With ID
 
 This endpoint is used to delete a Cart Item.
 
@@ -397,17 +396,166 @@ Authorization: Token <your_token>
 
     [
         {
-            "id": 1,
-            "user": "user1",
+            "id": 50,
             "order_items": [
                 {
-                    "product": 1,
-                    "quantity": 2
+                    "id": 47,
+                    "order": 50,
+                    "quantity": 2,
+                    "product": 10
                 },
-                // Other products
+                {
+                    "id": 48,
+                    "order": 50,
+                    "quantity": 3,
+                    "product": 11
+                }
             ],
-            "total_price": "1199.98",
-            "created_at": "2023-08-17T13:35:11.916924Z"
+            "products": [
+                {
+                    "id": 10,
+                    "name": "siirt pistachio",
+                    "description": "An endemic nut grown in Siirt, Turkey.",
+                    "price": "499.99",
+                    "stock": 7500,
+                    "image": "http://localhost:8000/media/products/2023/08/18/test.jpeg",
+                    "category": 4
+                },
+                {
+                    "id": 11,
+                    "name": "çorum chickpeas(leblebi)",
+                    "description": "Çorum's famous roasted chickpea is made from black peas.",
+                    "price": "44.99",
+                    "stock": 9200,
+                    "image": "http://localhost:8000/media/products/2023/08/18/test_como3qo.jpeg",
+                    "category": 4
+                }
+            ],
+            "total_price": 1134.95,
+            "created_at": "2023-08-21T13:52:27.509025Z"
         },
-        // Other orders
+        {
+            "id": 52,
+            "order_items": [
+                {
+                    "id": 52,
+                    "order": 52,
+                    "quantity": 2,
+                    "product": 41
+                }
+            ],
+            "products": [
+                {
+                    "id": 41,
+                    "name": "laptop",
+                    "description": "A high-performance laptop.",
+                    "price": "1599.99",
+                    "stock": 20,
+                    "image": null,
+                    "category": 5
+                }
+            ],
+            "total_price": 3199.98,
+            "created_at": "2023-08-21T14:00:03.064448Z"
+        }
     ]
+
+### Create Order
+
+An order is being created based on the user's cart.
+
+**Request:**
+
+### POST /orders/
+Authorization: Token <your_token>
+
+**Response Example:**
+
+    {
+        "id": 52,
+        "order_items": [
+            {
+                "id": 52,
+                "order": 52,
+                "quantity": 2,
+                "product": 41
+            }
+        ],
+        "products": [
+            {
+                "id": 41,
+                "name": "laptop",
+                "description": "A high-performance laptop.",
+                "price": "1599.99",
+                "stock": 20,
+                "image": null,
+                "category": 5
+            }
+        ],
+        "total_price": 3199.98,
+        "created_at": "2023-08-21T14:00:03.064448Z"
+    }
+
+### Get Order With ID
+
+It returns order details based on the order's ID number.
+
+**Request:**
+
+### GET /orders/order_id
+Authorization: Token <your_token>
+
+**Response Example:**
+
+    {
+        "id": 50,
+        "order_items": [
+            {
+                "id": 47,
+                "order": 50,
+                "quantity": 2,
+                "product": 10
+            },
+            {
+                "id": 48,
+                "order": 50,
+                "quantity": 3,
+                "product": 11
+            }
+        ],
+        "products": [
+            {
+                "id": 10,
+                "name": "siirt pistachio",
+                "description": "An endemic nut grown in Siirt, Turkey.",
+                "price": "499.99",
+                "stock": 7500,
+                "image": "http://localhost:8000/media/products/2023/08/18/test.jpeg",
+                "category": 4
+            },
+            {
+                "id": 11,
+                "name": "çorum chickpeas(leblebi)",
+                "description": "Çorum's famous roasted chickpea is made from black peas.",
+                "price": "44.99",
+                "stock": 9200,
+                "image": "http://localhost:8000/media/products/2023/08/18/test_como3qo.jpeg",
+                "category": 4
+            }
+        ],
+        "total_price": 1134.95,
+        "created_at": "2023-08-21T13:52:27.509025Z"
+    }
+
+### Delete Order With ID
+
+It returns order details based on the order's ID number.
+
+**Request:**
+
+### DELETE /orders/order_id
+Authorization: Token <your_token>
+
+**Response Example:**
+
+Status Code: 204 No Content
