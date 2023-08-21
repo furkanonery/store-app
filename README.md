@@ -100,7 +100,7 @@ This endpoint retrieves a list of available products with query params.
 
 **Request:**
 
-### GET /products?&category=electronics
+### GET /products?category=electronics
 
 
 **Response Example:**
