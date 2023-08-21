@@ -583,7 +583,7 @@ Authorization: Token <your_token>
 
 ### Delete Order With ID
 
-It returns order details based on the order's ID number.
+Deletes the order based on the order's ID number.
 
 **Request:**
 
