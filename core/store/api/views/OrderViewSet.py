@@ -33,7 +33,7 @@ class OrderViewSet(mixins.CreateModelMixin,
         self.perform_create(serializer)
         headers = self.get_success_headers(serializer.data)
 
-        response = OrderSerializer(Order.objects.last())
+        response = OrderSerializer(Order.objects.filter(user=self.request.user).last())
         return Response(response.data, status=status.HTTP_201_CREATED, headers=headers)
 
     def perform_create(self, serializer):
