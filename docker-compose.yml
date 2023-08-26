@@ -1,0 +1,25 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+      - postgres
+    command: python3 manage.py runserver 0.0.0.0:8000
+  redis:
+    image: "redis:latest"
+  postgres:
+    image: postgres:latest
+    container_name: my_postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: <your-postgres-username>
+      POSTGRES_PASSWORD: <your-postgres-password>
+      POSTGRES_DB: storeAppDatabase
+    ports:
+      - "33745:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
