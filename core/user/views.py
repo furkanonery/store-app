@@ -13,12 +13,20 @@ class CustomAuthToken(ObtainAuthToken):
                                            context={'request': request})
         serializer.is_valid(raise_exception=True)
         user = serializer.validated_data['user']
-        token, created = Token.objects.get_or_create(user=user)
-        cache.set(user.pk, token.key)
-        return Response({
-            'token': token.key,
-            'user_id': user.pk
-        })
+
+        token = cache.get(user.pk)
+        if token:
+            return Response({
+                'token': token,
+                'user_id': user.pk
+            })
+        else:
+            token, created = Token.objects.get_or_create(user=user)
+            cache.set(user.pk, token.key)
+            return Response({
+                'token': token.key,
+                'user_id': user.pk
+            })
     
 class LogoutView(ObtainAuthToken):
     authentication_classes = [TokenAuthentication]
