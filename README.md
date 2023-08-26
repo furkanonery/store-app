@@ -1,6 +1,20 @@
 # store-app
 Backend structure developed using Django REST Framework for an e-commerce application.
 
+# Deploying the project on Docker
+
+2. Build the Docker images using the following command:
+
+    ```
+    docker-compose build
+    ```
+
+3. Start the application and services with Docker Compose:
+
+    ```
+    docker-compose up
+    ```
+
 # store-app API Documentation
 
 This documentation outlines the usage and endpoints of the E-Commerce API. The API supports basic e-commerce functionalities such as product management, cart operations, and order processing.
