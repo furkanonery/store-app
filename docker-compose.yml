@@ -4,9 +4,22 @@ services:
     ports:
       - "8000:8000"
     depends_on:
+      - migration
       - redis
       - postgres
     command: python3 manage.py runserver 0.0.0.0:8000
+  migration:
+    build: .
+    command: python3 manage.py migrate --noinput
+    volumes:
+      - .:/code
+    depends_on:
+      - postgres
+    environment:
+      - POSTGRES_USER=<your-postgres-username>
+      - POSTGRES_PASSWORD=<your-postgres-password>
+
+
   redis:
     image: "redis:latest"
   postgres:
