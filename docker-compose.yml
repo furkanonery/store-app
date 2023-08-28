@@ -7,7 +7,14 @@ services:
       - migration
       - redis
       - postgres
+      - elasticsearch
     command: python3 manage.py runserver 0.0.0.0:8000
+    environment:
+      - ELASTIC_HOST=elasticsearch
+      - ELASTIC_PORT=9201
+      - ELASTIC_USER=<your-elasticsearch-username>
+      - ELASTIC_PASSWORD=<your-elasticsearch-password>
+
   migration:
     build: .
     command: python3 manage.py migrate --noinput
@@ -19,9 +26,18 @@ services:
       - POSTGRES_USER=<your-postgres-username>
       - POSTGRES_PASSWORD=<your-postgres-password>
 
-
   redis:
     image: "redis:latest"
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.14.0
+    environment:
+      - discovery.type=single-node
+      - ELASTIC_PASSWORD=<your-elasticsearch-password>
+    ports:
+      - "9201:9201"
+      - "9301:9301"
+
   postgres:
     image: postgres:latest
     container_name: my_postgres_db
@@ -34,5 +50,6 @@ services:
       - "33745:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+
 volumes:
   pgdata:
