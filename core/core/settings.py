@@ -14,6 +14,8 @@ from pathlib import Path
 from configs.database_config import DATABASE_CONFIG
 from configs.secure_config import SECRET_KEY
 from configs.cache_config import REDIS_URL
+from configs.elastic_search_config import ELASTIC_PORT,ELASTIC_HOST,ELASTIC_PASSWORD,ELASTIC_USER
+from elasticsearch_dsl.connections import connections
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -44,7 +46,8 @@ INSTALLED_APPS = [
     'user',
     'store',
     'rest_framework.authtoken',
-    "corsheaders",
+    'corsheaders',
+    'django_elasticsearch_dsl',
 ]
 
 MIDDLEWARE = [
@@ -151,3 +154,13 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:8080",
 ]
+
+ELASTICSEARCH_DSL={
+    'default': {
+        'hosts': f'{ELASTIC_HOST}:{ELASTIC_PORT}',
+        'http_auth': (f'{ELASTIC_USER}', f'{ELASTIC_PASSWORD}')
+    },
+}
+
+
+connections.configure(**ELASTICSEARCH_DSL)
