@@ -1,0 +1,1 @@
+from store.documents.ProductDocument import ProductDocument
