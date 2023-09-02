@@ -170,7 +170,7 @@ Content-Type: application/json
         "category": 5
     }
 
-## Detail Product
+### Detail Product
 
 This endpoint retrieves the information of a single product.
 
