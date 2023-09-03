@@ -5,6 +5,9 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 from django.core.cache import cache
+from rest_framework import generics
+from django.contrib.auth.models import User
+from user.serializers import RegisterSerializer
 
 class CustomAuthToken(ObtainAuthToken):
 
@@ -37,3 +40,7 @@ class LogoutView(ObtainAuthToken):
         cache.delete(user.pk)
         Token.objects.filter(user=user).delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+    
+class RegisterView(generics.CreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = RegisterSerializer
