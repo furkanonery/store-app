@@ -21,6 +21,7 @@ This documentation outlines the usage and endpoints of the E-Commerce API. The A
 
 - [x] Login
 - [x] Logout
+- [x] Register
 - [x] List Products
 - [x] List Products with query params
 - [x] Add Product
@@ -74,6 +75,33 @@ Authorization: Token <your_token>
 **Response Example:**
 
 Status Code: 204 No Content
+
+### Register
+
+This endpoint allows users to register in the system.
+
+**Request:**
+
+### POST /register/
+Content-Type: application/json
+
+    {
+        "first_name" : <your_firstname>,
+        "last_name" : <your_lastname>,
+        "username" : <your_username>,
+        "email" : <your_email>,
+        "password" : <your_password>,
+        "password2" : <your_password>
+    }
+
+**Response Example:**
+
+    {
+        "username": <your_username>,
+        "email": <your_email>,
+        "first_name": <your_firstname>,
+        "last_name": "<your_lastname>
+    }
 
 ## Products
 
