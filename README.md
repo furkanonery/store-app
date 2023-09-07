@@ -15,6 +15,20 @@ Backend structure developed using Django REST Framework for an e-commerce applic
     docker-compose up
     ```
 
+## Load sample data
+
+1. Navigate to the core directory:
+    ```
+    cd core
+    ```
+
+2. Install the samples by entering the following command:
+    ```
+    python3 manage.py loaddata initial_data.json
+    ```
+
+
+
 ## store-app API Documentation
 
 This documentation outlines the usage and endpoints of the E-Commerce API. The API supports basic e-commerce functionalities such as product management, cart operations, and order processing.
