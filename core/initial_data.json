@@ -1,0 +1,328 @@
+[
+    {
+        "model": "store.Category",
+        "pk": 1,
+        "fields": {
+            "name": "home",
+            "explanation": "Necessary tools and equipment for the home."
+        }
+    },
+    {
+        "model": "store.Category",
+        "pk": 2,
+        "fields": {
+            "name": "clothes",
+            "explanation": "Casual clothes."
+        }
+    },
+    {
+        "model": "store.Category",
+        "pk": 3,
+        "fields": {
+            "name": "technology",
+            "explanation": "Technological devices and tools."
+        }
+    },
+    {
+        "model": "store.Category",
+        "pk": 4,
+        "fields": {
+            "name": "nuts",
+            "explanation": "Nuts category."
+        }
+    },
+    {
+        "model": "store.Category",
+        "pk": 5,
+        "fields": {
+            "name": "electronics",
+            "explanation": "Electronic gadgets."
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 1,
+        "fields": {
+            "name": "Laptop",
+            "description": "Powerful laptop for all your computing needs.",
+            "price": 1299.99,
+            "stock": 30,
+            "category": 5
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 2,
+        "fields": {
+            "name": "Wireless Earbuds",
+            "description": "Premium wireless earbuds with noise cancellation.",
+            "price": 149.99,
+            "stock": 100,
+            "category": 5
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 3,
+        "fields": {
+            "name": "LED TV",
+            "description": "Large LED TV for immersive entertainment.",
+            "price": 999.99,
+            "stock": 20,
+            "category": 5
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 4,
+        "fields": {
+            "name": "Smart Watch",
+            "description": "Fitness and productivity-focused smart watch.",
+            "price": 199.99,
+            "stock": 60,
+            "category": 5
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 5,
+        "fields": {
+            "name": "Almonds",
+            "description": "Premium quality almonds for snacking.",
+            "price": 9.99,
+            "stock": 200,
+            "category": 4
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 6,
+        "fields": {
+            "name": "Pecans",
+            "description": "Delicious pecans for a healthy treat.",
+            "price": 12.99,
+            "stock": 150,
+            "category": 4
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 7,
+        "fields": {
+            "name": "Walnuts",
+            "description": "Fresh walnuts packed with essential nutrients.",
+            "price": 8.49,
+            "stock": 180,
+            "category": 4
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 8,
+        "fields": {
+            "name": "Cashews",
+            "description": "Buttery and flavorful cashews.",
+            "price": 11.79,
+            "stock": 170,
+            "category": 4
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 9,
+        "fields": {
+            "name": "Mixed Nuts",
+            "description": "A mix of various nuts for a diverse snack.",
+            "price": 10.99,
+            "stock": 120,
+            "category": 4
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 10,
+        "fields": {
+            "name": "Siirt pistachio",
+            "description": "An endemic nut grown in Siirt, Turkey.",
+            "price": "499.99",
+            "stock": 7500,
+            "category": 4
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 11,
+        "fields": {
+            "name": "Çorum chickpeas(leblebi)",
+            "description": "Çorum's famous roasted chickpea is made from black peas.",
+            "price": "44.99",
+            "stock": 9200,
+            "category": 4
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 12,
+        "fields": {
+            "name": "VR Headset",
+            "description": "Immersive virtual reality headset for gaming and experiences.",
+            "price": 299.99,
+            "stock": 40,
+            "category": 3
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 13,
+        "fields": {
+            "name": "Bluetooth Speaker",
+            "description": "Portable Bluetooth speaker with high-quality sound.",
+            "price": 69.99,
+            "stock": 80,
+            "category": 3
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 14,
+        "fields": {
+            "name": "Drones",
+            "description": "Advanced drones for aerial photography and exploration.",
+            "price": 499.99,
+            "stock": 25,
+            "category": 3
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 15,
+        "fields": {
+            "name": "Fitness Tracker",
+            "description": "Track your health and workouts with this fitness tracker.",
+            "price": 89.99,
+            "stock": 70,
+            "category": 3
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 16,
+        "fields": {
+            "name": "Gaming Console",
+            "description": "Next-gen gaming console for the ultimate gaming experience.",
+            "price": 399.99,
+            "stock": 30,
+            "category": 3
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 17,
+        "fields": {
+            "name": "T-Shirt",
+            "description": "Comfortable and stylish cotton t-shirt.",
+            "price": 19.99,
+            "stock": 150,
+            "category": 2
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 18,
+        "fields": {
+            "name": "Jeans",
+            "description": "Classic denim jeans for everyday wear.",
+            "price": 39.99,
+            "stock": 100,
+            "category": 2
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 19,
+        "fields": {
+            "name": "Dress Shirt",
+            "description": "Elegant dress shirt for formal occasions.",
+            "price": 49.99,
+            "stock": 80,
+            "category": 2
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 20,
+        "fields": {
+            "name": "Sweater",
+            "description": "Warm and cozy sweater for colder days.",
+            "price": 29.99,
+            "stock": 120,
+            "category": 2
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 21,
+        "fields": {
+            "name": "Running Shoes",
+            "description": "High-performance running shoes for athletes.",
+            "price": 79.99,
+            "stock": 90,
+            "category": 2
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 22,
+        "fields": {
+            "name": "Coffee Maker",
+            "description": "Advanced coffee maker for your daily caffeine fix.",
+            "price": 59.99,
+            "stock": 70,
+            "category": 1
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 23,
+        "fields": {
+            "name": "Cookware Set",
+            "description": "Complete set of high-quality cookware for your kitchen.",
+            "price": 149.99,
+            "stock": 50,
+            "category": 1
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 24,
+        "fields": {
+            "name": "Vacuum Cleaner",
+            "description": "Powerful vacuum cleaner for maintaining a clean home.",
+            "price": 129.99,
+            "stock": 40,
+            "category": 1
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 25,
+        "fields": {
+            "name": "Bedding Set",
+            "description": "Comfortable bedding set for a good night's sleep.",
+            "price": 89.99,
+            "stock": 60,
+            "category": 1
+        }
+    },
+    {
+        "model": "store.Product",
+        "pk": 26,
+        "fields": {
+            "name": "Air Purifier",
+            "description": "Efficient air purifier for improved indoor air quality.",
+            "price": 179.99,
+            "stock": 30,
+            "category": 1
+        }
+    }
+]
