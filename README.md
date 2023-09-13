@@ -38,6 +38,7 @@ This documentation outlines the usage and endpoints of the E-Commerce API. The A
 - [x] Register
 - [x] List Products
 - [x] List Products with query params
+- [x] Search Products with Elasticsearch
 - [x] Add Product
 - [x] Get Product With ID
 - [x] Update Product
@@ -182,6 +183,48 @@ This endpoint retrieves a list of available products with query params.
         }
     ]
     // Other products
+
+### Search Products with Elasticsearch
+
+This endpoint performs analysis on the product names and descriptions based on the provided search parameters and returns the results.
+
+**Request:**
+
+### GET /search/?search=<search_value>
+
+**Request Example:**
+
+### GET /search/?search=wireless
+
+**Response Example:**
+
+    [
+        {
+            "description": "Premium wireless earbuds with noise cancellation.",
+            "name": "Wireless Earbuds",
+            "id": 2
+        }
+    ]
+
+**Request Example:**
+
+### GET /search/?search=premium
+
+**Response Example:**
+
+    [
+        {
+            "description": "Premium quality almonds for snacking.",
+            "name": "Almonds",
+            "id": 5
+        },
+        {
+            "description": "Premium wireless earbuds with noise cancellation.",
+            "name": "Wireless Earbuds",
+            "id": 2
+        }
+    ]
+    
 
 ### Add Product
 
