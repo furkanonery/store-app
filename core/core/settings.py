@@ -157,8 +157,7 @@ CORS_ALLOWED_ORIGINS = [
 
 ELASTICSEARCH_DSL={
     'default': {
-        'hosts': f'{ELASTIC_HOST}:{ELASTIC_PORT}',
-        'http_auth': (f'{ELASTIC_USER}', f'{ELASTIC_PASSWORD}')
+        'hosts': f'{ELASTIC_HOST}:{ELASTIC_PORT}'
     },
 }
 
