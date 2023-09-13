@@ -2,3 +2,4 @@ from store.api.serializers.ProductSerializer import ProductSerializer
 from store.api.serializers.CartSerializer import CartSerializer, CartItemSerializer
 from store.api.serializers.OrderSerializer import OrderSerializer
 from store.api.serializers.CategorySerializer import CategorySerializer
+from store.api.serializers.ProductSearchSerializer import ProductSearchSerializer
