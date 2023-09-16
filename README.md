@@ -36,6 +36,8 @@ This documentation outlines the usage and endpoints of the E-Commerce API. The A
 - [x] Login
 - [x] Logout
 - [x] Register
+- [x] Get user's profile information
+- [x] Update user's profile information
 - [x] List Products
 - [x] List Products with query params
 - [x] Search Products with Elasticsearch
@@ -119,6 +121,53 @@ Content-Type: application/json
         "last_name": "<your_lastname>
     }
 
+## User Profiles
+
+### Get Profile
+
+This endpoint retrieves the user's personal information.
+
+**Request:**
+
+### GET /api/userprofile/
+Authorization: Token <your_token>
+
+**Response Example:**
+
+    {
+        "id": 2,
+        "bio": "Biographical information",
+        "profile_picture": "File path of profile photo",
+        "birth_date": "1999-01-01",
+        "phone_number": "+90 000 000 00 00",
+        "address": "İstanbul, Türkiye"
+    }
+
+### Update Profile
+
+This endpoint allows the user to update their personal information.
+
+**Request:**
+
+### PATCH /api/userprofile/
+Authorization: Token <your_token> <br>
+Content-Type: application/json
+
+    {
+        "address": "Pendik, İstanbul, Türkiye"
+    }
+
+**Response Example:**
+
+    {
+        "id": 2,
+        "bio": "Biographical information",
+        "profile_picture": "File path of profile photo",
+        "birth_date": "1999-01-01",
+        "phone_number": "+90 000 000 00 00",
+        "address": "Pendik, İstanbul, Türkiye"
+    }
+
 ## Products
 
 ### List Products
@@ -127,7 +176,7 @@ This endpoint retrieves a list of available products.
 
 **Request:**
 
-### GET /products/
+### GET /api/products/
 
 
 **Response Example:**
@@ -158,7 +207,7 @@ This endpoint retrieves a list of available products with query params.
 
 **Request:**
 
-### GET /products?category=electronics
+### GET /api/products?category=electronics
 
 
 **Response Example:**
@@ -191,11 +240,11 @@ This endpoint performs analysis on the product names and descriptions based on t
 
 **Request:**
 
-### GET /search/?search=<search_value>
+### GET /api/search/?search=<search_value>
 
 **Request Example:**
 
-### GET /search/?search=wireless
+### GET /api/search/?search=wireless
 
 **Response Example:**
 
@@ -209,7 +258,7 @@ This endpoint performs analysis on the product names and descriptions based on t
 
 **Request Example:**
 
-### GET /search/?search=premium
+### GET /api/search/?search=premium
 
 **Response Example:**
 
@@ -233,7 +282,7 @@ This endpoint allows you to add a new product.
 
 **Request:**
 
-### POST /products/
+### POST /api/products/
 Content-Type: application/json
 
     {
@@ -262,7 +311,7 @@ This endpoint retrieves the information of a single product.
 
 **Request:**
 
-### GET /products/{product_id}
+### GET /api/products/{product_id}
 
 
 **Response Example:**
@@ -283,7 +332,7 @@ This endpoint is used to update product information.
 
 **Request:**
 
-### PATCH /products/{product_id}/
+### PATCH /api/products/{product_id}/
 Content-Type: application/json
 
     {
@@ -308,7 +357,7 @@ This endpoint is used to delete a product.
 
 **Request:**
 
-### DELETE /products/{products_id}
+### DELETE /api/products/{products_id}
 
  **Response Example:**
 
@@ -321,7 +370,7 @@ This endpoint retrieves the user's cart.
 
 **Request:**
 
-### GET /carts/
+### GET /api/carts/
 Authorization: Token <your_token>
 
  **Response Example:**
@@ -388,7 +437,7 @@ This endpoint creates a new cart.
 
 **Request:**
 
-### POST /carts/
+### POST /api/carts/
 Authorization: Token <your_token>
 
 **Response Example:**
@@ -405,7 +454,7 @@ This endpoint deletes the cart.
 
 **Request:**
 
-### DELETE /carts/{cart_id}/
+### DELETE /api/carts/{cart_id}/
 Authorization: Token <your_token>
 
 **Response Example:**
@@ -419,7 +468,7 @@ This endpoint lists the cart items belonging to a user.
 
 **Request:**
 
-### GET /cartitems/
+### GET /api/cartitems/
 Authorization: Token <your_token>
 
 **Response Example:**
@@ -444,7 +493,7 @@ This endpoint retrieves a single cart item.
 
 **Request:**
 
-### GET /cartitems/{cartitem_id}
+### GET /api/cartitems/{cartitem_id}
 Authorization: Token <your_token>
 
 **Response Example:**
@@ -462,7 +511,7 @@ This endpoint retrieves a single cart item.
 
 **Request:**
 
-### POST /cartitems/
+### POST /api/cartitems/
 Authorization: Token <your_token> <br>
 Content-Type: application/json
 
@@ -486,7 +535,7 @@ This endpoint updates cart items.
 
 **Request:**
 
-### PATCH /cartitems/{cartitems_id}
+### PATCH /api/cartitems/{cartitems_id}
 Authorization: Token <your_token> <br>
 Content-Type: application/json
 
@@ -509,7 +558,7 @@ This endpoint is used to delete a Cart Item.
 
 **Request:**
 
-### DELETE /cartitems/{cartitems_id}
+### DELETE /api/cartitems/{cartitems_id}
 
  **Response Example:**
 
@@ -523,7 +572,7 @@ This endpoint retrieves the user's orders.
 
 **Request:**
 
-### GET /orders/
+### GET /api/orders/
 Authorization: Token <your_token>
 
 **Response Example:**
@@ -600,7 +649,7 @@ An order is being created based on the user's cart.
 
 **Request:**
 
-### POST /orders/
+### POST /api/orders/
 Authorization: Token <your_token>
 
 **Response Example:**
@@ -636,7 +685,7 @@ It returns order details based on the order's ID number.
 
 **Request:**
 
-### GET /orders/order_id
+### GET /api/orders/order_id
 Authorization: Token <your_token>
 
 **Response Example:**
@@ -687,7 +736,7 @@ Deletes the order based on the order's ID number.
 
 **Request:**
 
-### DELETE /orders/order_id
+### DELETE /api/orders/order_id
 Authorization: Token <your_token>
 
 **Response Example:**
