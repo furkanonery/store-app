@@ -7,7 +7,7 @@ from rest_framework.authentication import TokenAuthentication
 class ProductViewSet(viewsets.ModelViewSet):
 
     # permission_classes = [IsAuthenticated]
-    authentication_classes = [TokenAuthentication,]
+    # authentication_classes = [TokenAuthentication,]
     serializer_class = ProductSerializer
 
     def get_queryset(self):
