@@ -94,6 +94,7 @@ Status Code: 204 No Content
 ### Register
 
 This endpoint allows users to register in the system.
+* The UserProfile model has been associated with the User model using signals.
 
 **Request:**
 
